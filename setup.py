@@ -21,6 +21,11 @@ setup(
     install_requires=[
         'Django >= 1.6.8',
     ],
+    tests_require=[
+        'django-nose==1.3',
+        'django-setuptest==0.1.4',
+    ],
+    test_suite = "reef_extras.runtests.runtests",
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
