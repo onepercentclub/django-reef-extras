@@ -20,6 +20,7 @@ setup(
     author_email="devteam@onepercentclub.com", 
     install_requires=[
         'Django >= 1.6.8',
+        'django-lockdown==1.0'
     ],
     tests_require=[
         'django-nose==1.3',

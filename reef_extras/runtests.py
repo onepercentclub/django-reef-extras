@@ -10,6 +10,7 @@ if not settings.configured:
             'django_nose',
             'reef_extras'
         ],
+        MIDDLEWARE_CLASSES=()
     )
 
 from django_nose import NoseTestSuiteRunner
