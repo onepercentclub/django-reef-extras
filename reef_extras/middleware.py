@@ -13,7 +13,7 @@ class LockdownMiddleware(BaseLockdownMiddleware):
     of password coming from request header: X-Lockdown
     """
     def process_request(self, request):
-        if not request.META.has_key('HTTP_CONNECTION'):
+        if not request.META.has_key('HTTP_X_LOCKDOWN'):
             return None
 
         try:
@@ -50,7 +50,7 @@ class LockdownMiddleware(BaseLockdownMiddleware):
                 return None
 
         form_data = request.method == 'POST' and request.POST or {}
-        passwords = (request.META['HTTP_CONNECTION'],)
+        passwords = (request.META['HTTP_X_LOCKDOWN'],)
 
         if self.form is None:
             form_class = _default_form
